@@ -11,22 +11,20 @@ import { MainComponent } from './mikvo/dashboard/modules/main/main.component';
 import { ProfilesComponent } from './mikvo/dashboard/modules/profiles/profiles.component';
 import { ReprintvoucherComponent } from './mikvo/dashboard/modules/reprintvoucher/reprintvoucher.component';
 import { UserprofileComponent } from './mikvo/dashboard/modules/userprofile/userprofile.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DefaultModule } from './mikvo/dashboard/layouts/default/default.module';
+import { MikvoModule } from './mikvo/mikvo.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MikvoComponent,
-    DefaultComponent,
-    CreateusersComponent,
-    DesignvoucherComponent,
-    MainComponent,
-    ProfilesComponent,
-    ReprintvoucherComponent,
-    UserprofileComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DefaultModule,
+    MikvoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
