@@ -10,11 +10,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   { path: 'mikvo', component: MikvoComponent},
   { path: '', redirectTo: 'mikvo', pathMatch: 'full' },
-  {path:'', component: DefaultComponent,
-  children:[
-    { path:'dashboard', component: MainComponent },
-    { path: 'users', component: UserprofileComponent }
-  ]},
+  { path:'', component: DefaultComponent,
+    children:[
+      { path:'dashboard', component: MainComponent },
+      { path: 'users', component: UserprofileComponent }
+    ]
+  },
   { path: '**', component: PageNotFoundComponent}
 ];
 
