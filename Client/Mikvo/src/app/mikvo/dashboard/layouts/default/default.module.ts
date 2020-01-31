@@ -10,6 +10,7 @@ import { UserprofileComponent } from '../../modules/userprofile/userprofile.comp
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 import { MainService } from '../../modules/main.service';
+import { RouterboardComponent } from '../../modules/routerboard/routerboard.component';
 
 
 
@@ -21,7 +22,8 @@ import { MainService } from '../../modules/main.service';
     MainComponent,
     ProfilesComponent,
     ReprintvoucherComponent,
-    UserprofileComponent
+    UserprofileComponent, 
+    RouterboardComponent
   ],
   imports: [
     CommonModule,
