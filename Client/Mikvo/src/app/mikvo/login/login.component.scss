@@ -1,0 +1,47 @@
+
+h3.login-heading.mb-4{
+  font-family: roboto;
+  text-align: center;
+  font-size: 2rem;
+}
+.login-form {
+  width: 400px;
+  margin: 60px auto;
+}
+.login-form form {
+  margin-bottom: 15px;
+  background: #f8f9fa;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+.login-form h2 {
+  margin: 0 0 15px;
+}
+.form-group, .btn {
+  min-height: 38px;  
+  border-radius: 2px;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  
+}
+.btn {        
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+}
+p{
+  text-align: center;
+}
+label{
+  font-family: roboto;
+  color: #343a40;
+  font-size: 0.875em;
+
+}
+a{
+  text-decoration: none;
+}
+#pass{
+  padding-left: 10rem;
+}
