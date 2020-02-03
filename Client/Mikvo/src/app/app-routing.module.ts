@@ -10,6 +10,8 @@ import { RegisterComponent } from './mikvo/register/register.component';
 import { ResetPasswordComponent } from './mikvo/reset-password/reset-password.component';
 import { RouterboardComponent } from './mikvo/dashboard/modules/routerboard/routerboard.component';
 import { CreateusersComponent } from './mikvo/dashboard/modules/createusers/createusers.component';
+import { ProfilesComponent } from './mikvo/dashboard/modules/profiles/profiles.component';
+import { ReprintvoucherComponent } from './mikvo/dashboard/modules/reprintvoucher/reprintvoucher.component';
 
 
 const routes: Routes = [
@@ -22,9 +24,11 @@ const routes: Routes = [
   { path:'', component: DefaultComponent,
     children:[
       { path:'dashboard', component: MainComponent },
-      { path: 'users', component: UserprofileComponent },
+      { path: 'user', component: UserprofileComponent },
       { path: 'routerboard', component: RouterboardComponent },
-      { path: 'createusers', component: CreateusersComponent }
+      { path: 'createusers', component: CreateusersComponent },
+      { path: 'profiles', component: ProfilesComponent },
+      { path: 'reprint', component: ReprintvoucherComponent }
     ]
   },
   { path: '**', component: PageNotFoundComponent}
