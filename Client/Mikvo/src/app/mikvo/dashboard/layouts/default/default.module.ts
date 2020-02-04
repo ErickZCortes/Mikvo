@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 import { MainService } from '../../modules/main.service';
 import { RouterboardComponent } from '../../modules/routerboard/routerboard.component';
+import { Mikvoguard } from 'src/app/mikvoguard';
 
 
 
@@ -31,7 +32,7 @@ import { RouterboardComponent } from '../../modules/routerboard/routerboard.comp
     SharedModule,
   ],
   providers: [
-    MainService
+    MainService, Mikvoguard
   ]
 
 })

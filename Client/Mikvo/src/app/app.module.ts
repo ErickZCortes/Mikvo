@@ -14,6 +14,7 @@ import { UserprofileComponent } from './mikvo/dashboard/modules/userprofile/user
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DefaultModule } from './mikvo/dashboard/layouts/default/default.module';
 import { MikvoModule } from './mikvo/mikvo.module';
+import { Mikvoguard } from './mikvoguard';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { MikvoModule } from './mikvo/mikvo.module';
     DefaultModule,
     MikvoModule
   ],
-  providers: [],
+  providers: [Mikvoguard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

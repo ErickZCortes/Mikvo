@@ -12,6 +12,7 @@ import { RouterboardComponent } from './mikvo/dashboard/modules/routerboard/rout
 import { CreateusersComponent } from './mikvo/dashboard/modules/createusers/createusers.component';
 import { ProfilesComponent } from './mikvo/dashboard/modules/profiles/profiles.component';
 import { ReprintvoucherComponent } from './mikvo/dashboard/modules/reprintvoucher/reprintvoucher.component';
+import { Mikvoguard } from './mikvoguard';
 
 
 const routes: Routes = [

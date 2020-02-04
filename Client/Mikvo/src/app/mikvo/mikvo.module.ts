@@ -7,6 +7,7 @@ import { DefaultModule } from './dashboard/layouts/default/default.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { Mikvoguard } from '../mikvoguard';
 
 
 @NgModule({
@@ -20,5 +21,6 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
   exports: [
     MikvoComponent
   ],
+  providers: [Mikvoguard]
 })
 export class MikvoModule { }
