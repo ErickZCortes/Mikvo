@@ -1,1 +1,196 @@
-<p>profiles works!</p>
+<h1 class="h3 mb-2 text-gray-800">Perfiles</h1>
+<div class="main-content-container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="text-center card shadow mb-4">
+                <div class="card-body">
+                    <h5 id="title">Selecciona un perfil</h5>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-sm justify-content-center">
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">1<span class="sr-only">(current)</span>
+                                </span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-8">
+            <div class="card shadow mb-4">
+                <div class="row card-body">
+                    <div class="col-sm-6 col-8">
+                        <form>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="form-group col-md-12">
+                                    <label for="Name">Nombre</label>
+                                    <input type="text" id="Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="form-group col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Dirección Pool</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="col-md-12">
+                                    <label for="UpSpeed">Velocidad de Subida</label>
+                                </div>
+                                <div class="row col-md-12">
+                                    <div class="form-group col-md-7">
+                                        <input type="number" id="UpSpeed" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group">
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                <option>Kb</option>
+                                                <option>Mb</option>
+                                                <option>Gb</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="col-md-12">
+                                    <label for="DownSpeed">Velocidad de Descarga</label>
+                                </div>
+                                <div class="row col-md-12">
+                                    <div class="form-group col-md-7">
+                                        <input type="number" id="DownSpeed" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <div class="form-group">
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                <option>Kb</option>
+                                                <option>Mb</option>
+                                                <option>Gb</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="form-group col-md-12">
+                                    <label for="Cost">Costo</label>
+                                    <input type="number" id="Cost" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="form-group col-md-12">
+                                    <label for="typetime">Tipo de tiempo</label>
+                                    <div class="form-group">
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="col-md-12">
+                                    <label for="Limit">Límite de tiempo</label>
+                                </div>
+                                <div class="row col-md-12">
+                                    <div class="form-group col-md-6">
+                                        <input type="number" id="Limit" class="form-control">
+                                        <small>dias</small>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="time" id="" class="form-control">
+                                        <small>horas</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="col-md-12">
+                                    <label for="Duration">Voucher expiración</label>
+                                </div>
+                                <div class="row col-md-12">
+                                    <div class="form-group col-md-6">
+                                        <input type="number" id="Duration" class="form-control">
+                                        <small>dias</small>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="time" id="" class="form-control">
+                                        <small>horas</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="form-group col-md-12">
+                                    <label for="Duration">Voucher expiración</label>
+                                    <input type="number" id="Duration" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-12 col-lg-12">
+                                <div class="form-group col-md-12">
+                                    <label for="disconnect">Desconectar en</label>
+                                    <input type="time" id="disconnect" class="form-control">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-6 col-md-4" >
+                        
+                            <div class="col-sm-6 col-md-12 col-lg-12" id="buttons">
+                                <button href="#" class="btn btn-primary btn-lg btn-block"><i class="far fa-file"></i>
+                                    Nuevo</button>
+                                <br>
+                                <button href="#" class="btn btn-success btn-lg btn-block"><i class="far fa-save"></i>
+                                    Guardar</button>
+                                <br>
+                                <button href="#" class="btn btn-danger btn-lg btn-block"><i class="fas fa-trash"></i>
+                                    Eliminar</button>
+                            </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
