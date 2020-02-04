@@ -15,7 +15,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent, 
     SidebarComponent, 
     CardComponent, 
-    PieComponent],
+    PieComponent, 
+  ],
   imports: [
     CommonModule,
     RouterModule
