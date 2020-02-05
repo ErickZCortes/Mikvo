@@ -1,5 +1,5 @@
 <h1 class="h3 mb-2 text-gray-800">Perfiles</h1>
-<div class="main-content-container">
+<div class="container">
     <div class="row">
         <div class="col-lg-4">
             <div class="text-center card shadow mb-4">
@@ -40,154 +40,138 @@
                         </tbody>
                     </table>
                     <nav aria-label="...">
-                        <ul class="pagination pagination-sm justify-content-center">
+                        <ul class="pagination pagination justify-content-center">
                             <li class="page-item active" aria-current="page">
                                 <span class="page-link">1<span class="sr-only">(current)</span>
                                 </span>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-lg-8">
+        <div class="col-lg-8">
             <div class="card shadow mb-4">
-                <div class="row card-body">
-                    <div class="col-sm-6 col-8">
+                <div class="card-body">
+                    <div class="col">
                         <form>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
-                                <div class="form-group col-md-12">
+                            <div class="row">
+                                <div class="form-group col-md-6">
                                     <label for="Name">Nombre</label>
                                     <input type="text" id="Name" class="form-control">
                                 </div>
-                            </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
-                                <div class="form-group col-md-12">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Dirección Pool</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group col-md-6">
+                                    <label for="exampleFormControlSelect1">Dirección Pool</label>
+                                    <select class="form-control" id="">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <label for="UpSpeed">Velocidad de Subida</label>
                                 </div>
-                                <div class="row col-md-12">
-                                    <div class="form-group col-md-7">
-                                        <input type="number" id="UpSpeed" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <div class="form-group">
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>Kb</option>
-                                                <option>Mb</option>
-                                                <option>Gb</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                <div class="form-group col-md-8">
+                                    <input type="number" id="UpSpeed" class="form-control">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Kb</option>
+                                        <option>Mb</option>
+                                        <option>Gb</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
+
+
+                            <div class="row">
                                 <div class="col-md-12">
                                     <label for="DownSpeed">Velocidad de Descarga</label>
                                 </div>
-                                <div class="row col-md-12">
-                                    <div class="form-group col-md-7">
-                                        <input type="number" id="DownSpeed" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <div class="form-group">
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>Kb</option>
-                                                <option>Mb</option>
-                                                <option>Gb</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                <div class="form-group col-md-8">
+                                    <input type="number" id="DownSpeed" class="form-control">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Kb</option>
+                                        <option>Mb</option>
+                                        <option>Gb</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
-                                <div class="form-group col-md-12">
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
                                     <label for="Cost">Costo</label>
                                     <input type="number" id="Cost" class="form-control">
                                 </div>
-                            </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-6">
                                     <label for="typetime">Tipo de tiempo</label>
-                                    <div class="form-group">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>1</option>
-                                        </select>
-                                    </div>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
+
+                            <div class="row">
                                 <div class="col-md-12">
                                     <label for="Limit">Límite de tiempo</label>
                                 </div>
-                                <div class="row col-md-12">
-                                    <div class="form-group col-md-6">
-                                        <input type="number" id="Limit" class="form-control">
-                                        <small>dias</small>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <input type="time" id="" class="form-control">
-                                        <small>horas</small>
-                                    </div>
+                                <div class="form-group col-md-3">
+                                    <input type="number" id="Limit" class="form-control">
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <small>Dias</small>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="time" id="" class="form-control">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <small>Horas</small>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <label for="Duration">Voucher expiración</label>
                                 </div>
-                                <div class="row col-md-12">
-                                    <div class="form-group col-md-6">
-                                        <input type="number" id="Duration" class="form-control">
-                                        <small>dias</small>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <input type="time" id="" class="form-control">
-                                        <small>horas</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
-                                <div class="form-group col-md-12">
-                                    <label for="Duration">Voucher expiración</label>
+                                <div class="form-group col-md-3">
                                     <input type="number" id="Duration" class="form-control">
                                 </div>
+                                <div class="col-md-1">
+                                    <small>dias</small>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="time" id="" class="form-control">
+
+                                </div>
+                                <div class="col-md-2">
+                                    <small>horas</small>
+                                </div>
                             </div>
-                            <div class="col-sm-6 col-md-12 col-lg-12">
-                                <div class="form-group col-md-12">
-                                    <label for="disconnect">Desconectar en</label>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="disconnect">Desconectar en:</label>
+                                </div>
+                                <div class="form-group col-md-4">
                                     <input type="time" id="disconnect" class="form-control">
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <button type="button" style="margin-right: 5px;" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Nuevo</button>
+                                    <button type="button" style="margin-right: 5px;" class="btn btn-success btn-xs"><i class="fa fa-download"></i> Guardar</button>
+                                    <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    <div class="col-sm-6 col-md-4" >
-                        
-                            <div class="col-sm-6 col-md-12 col-lg-12" id="buttons">
-                                <button href="#" class="btn btn-primary btn-lg btn-block"><i class="far fa-file"></i>
-                                    Nuevo</button>
-                                <br>
-                                <button href="#" class="btn btn-success btn-lg btn-block"><i class="far fa-save"></i>
-                                    Guardar</button>
-                                <br>
-                                <button href="#" class="btn btn-danger btn-lg btn-block"><i class="fas fa-trash"></i>
-                                    Eliminar</button>
-                            </div>
-                    
                     </div>
                 </div>
             </div>
