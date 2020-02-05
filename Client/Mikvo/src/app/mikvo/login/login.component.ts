@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/model/user/user';
+import { Router } from '@angular/router';
+import { UserRepositoryService } from 'src/app/model/user/user-repository.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  private user: User[] = []
+  constructor(private router: Router, private userRepoService: UserRepositoryService) { }
 
   ngOnInit() {
   }
 
-}
+  login(user){
+    return this.userRepoService.login(user);
+  }
+} 
