@@ -19,7 +19,6 @@ export class UserDatasourceService {
     return this.httpClient.get(this.bassUrl + '/users');
   }
 
-  login(user: User[]): any{
-    return this.httpClient.post(this.bassUrl + '/users/login', user);
-  }
+  login(user: User){
+    return this.httpClient.post<User>(this.bassUrl + '/users/login',user)};
 }

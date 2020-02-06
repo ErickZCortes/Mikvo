@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user/user';
 import { Router } from '@angular/router';
 import { UserRepositoryService } from 'src/app/model/user/user-repository.service';
+import { Observable } from 'rxjs';
+import { UserDatasourceService } from 'src/app/model/user/user-datasource.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +12,27 @@ import { UserRepositoryService } from 'src/app/model/user/user-repository.servic
 })
 export class LoginComponent implements OnInit {
 
-  private user: User[] = []
-  constructor(private router: Router, private userRepoService: UserRepositoryService) { }
+   //user: User;
+   user :User= {} as User;
+  constructor(private router: Router, private userRepoService: UserRepositoryService, data : UserDatasourceService) { }
 
   ngOnInit() {
   }
-
-  login(user){
-    return this.userRepoService.login(user);
-  }
+  
+  login(user :User){
+    //this.imp();
+    //this.userRepoService.login(user);
+    try {
+      const result = this.userRepoService.login(user);
+      if (result) {
+        this.router.navigate(['/dashboard']);
+        //console.log(this.userRepoService.login(user));
+        console.log(user);
+        console.log(this.user);
+      }  
+    }
+    catch (e) {
+      console.error(e);
+    }
+  };  
 } 

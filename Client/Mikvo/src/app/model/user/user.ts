@@ -3,7 +3,7 @@ export class User {
         public id_user: number,
         public fullname_user: string,
         public user_name: string,
-        public mail_user: string,
+        public email_user: string,
         public password_user: string,
         public token_user: string,
         public img_user: string,

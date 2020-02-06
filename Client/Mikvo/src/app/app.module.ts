@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DefaultModule } from './mikvo/dashboard/layouts/default/default.module';
 import { MikvoModule } from './mikvo/mikvo.module';
 import { Mikvoguard } from './mikvoguard';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { Mikvoguard } from './mikvoguard';
     BrowserModule,
     AppRoutingModule,
     DefaultModule,
-    MikvoModule
+    MikvoModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [Mikvoguard],
   bootstrap: [AppComponent]

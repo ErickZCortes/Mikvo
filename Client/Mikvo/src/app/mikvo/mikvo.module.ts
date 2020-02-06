@@ -9,6 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { Mikvoguard } from '../mikvoguard';
 import { User } from '../model/user/user';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -17,10 +19,13 @@ import { User } from '../model/user/user';
     CommonModule,
     HttpClientModule,
     RouterModule,
-    DefaultModule
+    DefaultModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
-    MikvoComponent
+    MikvoComponent    
   ],
   providers: [Mikvoguard]
 })

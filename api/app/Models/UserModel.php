@@ -31,7 +31,7 @@
                     id_user,
                     fullname_user,
                     user_name,
-                    mail_user,
+                    email_user,
                     password_user,
                     token_user,
                     img_user,
@@ -40,7 +40,7 @@
                     :id_user,
                     :fullname_user,
                     :user_name,
-                    :mail_user,
+                    :email_user,
                     :password_user,
                     :token_user,
                     :img_user,
@@ -51,7 +51,7 @@
             $result->bindParam(':id_user', $user['id_user'], \PDO::PARAM_INT, 20);
             $result->bindParam(':fullname_user', $user['fullname_user'], \PDO::PARAM_STR, 40);
             $result->bindParam(':user_name', $user['user_name'], \PDO::PARAM_STR, 15);
-            $result->bindParam(':mail_user', $user['mail_user'], \PDO::PARAM_STR, 40);
+            $result->bindParam(':email_user', $user['email_user'], \PDO::PARAM_STR, 40);
             $result->bindParam(':password_user',$pass, \PDO::PARAM_STR, 100);
             $result->bindParam(':token_user', $user['token_user'], \PDO::PARAM_STR, 100);
             $result->bindParam(':img_user', $user['img_user'], \PDO::PARAM_STR, 200);
@@ -77,7 +77,7 @@
                 'id_user'=> $user['id_user'],
                 'fullname_user' => $user['fullname_user'],
                 'user_name' => $user['user_name'],
-                'mail_user' => $user['mail_user'],
+                'email_user' => $user['email_user'],
                 'password_user' => $user['password_user'],
                 'token_user' => $user['token_user'],
                 'img_user' => $user['img_user'],
@@ -87,7 +87,7 @@
                 'UPDATE users SET 
                 fullname_user=:fullname_user,
                 user_name =:user_name,
-                mail_user=:mail_user,
+                email_user=:email_user,
                 password_user=:	password_user,
                 token_user=:token_user,
                 img_user=:img_user,
@@ -110,9 +110,9 @@
         }
 
         public function login($login){
-            $email = $login['mail_user'];
+            $email = $login['email_user'];
             $pass = md5($login['password_user']);
-            $sqlE = $this->db->pdo->prepare('SELECT * FROM users WHERE mail_user = :email');
+            $sqlE = $this->db->pdo->prepare('SELECT * FROM users WHERE email_user = :email');
             $sqlE->bindParam(':email', $email, \PDO::PARAM_STR);
             $sqlE->execute();
             $result = $sqlE->fetchAll(\PDO::FETCH_ASSOC);
