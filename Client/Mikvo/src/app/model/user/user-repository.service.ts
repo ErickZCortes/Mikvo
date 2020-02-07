@@ -28,7 +28,10 @@ export class UserRepositoryService {
    } 
 
    login(user:User){
-    return this.dataSourceService.login(user);
+    return this.dataSourceService.login(user)
+    .subscribe((response) => {
+      console.log(response);
+    });
    }
 
 }

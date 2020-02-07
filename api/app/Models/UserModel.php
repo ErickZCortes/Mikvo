@@ -137,7 +137,6 @@
                 'success' => true,
                 'description' => 'Correct access, Welcome',
                 'token' => $token,
-                session_start()
             );
         }
 

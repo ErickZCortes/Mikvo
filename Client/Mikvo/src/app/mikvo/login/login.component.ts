@@ -19,16 +19,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   
-  login(user :User){
-    //this.imp();
-    //this.userRepoService.login(user);
+  login(){
+    
     try {
-      const result = this.userRepoService.login(user);
+      const result = this.userRepoService.login(this.user);
       if (result) {
         this.router.navigate(['/dashboard']);
         //console.log(this.userRepoService.login(user));
-        console.log(user);
-        console.log(this.user);
+        //console.log(user);
+        //console.log(this.user);
       }  
     }
     catch (e) {
