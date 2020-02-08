@@ -10,17 +10,12 @@ export class UserRepositoryService {
 
   private user: User[] = [];
   private userNumber: string[] =[];
- private uuser: User;
   
   constructor( private dataSourceService: UserDatasourceService) {
     dataSourceService.getUsers().subscribe((response) =>{
       this.user = response['users'];
       this.userNumber = response['users'].map(u => u.usererNumber).filter((c, index, array) => array.indexOf(c) === index).sort();
     });
-    dataSourceService.login(this.uuser).subscribe((response) =>{
-      this.uuser = response['users/login'];
-    });
-    
    }
 
    getUser(): User[]{
@@ -33,5 +28,19 @@ export class UserRepositoryService {
       console.log(response);
     });
    }
+
+   insertUser(user:User){
+    return this.dataSourceService.insertUser(user)
+    .subscribe((response) => {
+        console.log(response);
+      });
+   };
+
+   updateUser(user:User){
+    return this.dataSourceService.updateUser(user)
+    .subscribe((response) => {
+        console.log(response);
+      });
+   };
 
 }

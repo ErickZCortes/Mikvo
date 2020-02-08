@@ -1,22 +1,28 @@
 <div class="login-form">
-    <form  #loginForm ="ngForm" (ngSubmit)="login()" >
-    <h2 class="mb-2">Iniciar sesión en Mikvo</h2>
-    <p>Ingrese a su cuenta para continuar</p>
-    <br>
-    <div class="form-group">
-      <label for="email_user">Correo electrónico</label>
-      <input type="email" class="form-control"  [(ngModel)]="user.email_user" placeholder="" required id="email_user" name="email_user" >
-        
-    </div>
-    <div class="form-group">
-      <label for="password_user">Contraseña</label>
-      <input type="password" class="form-control" [(ngModel)]="user.password_user" placeholder="" required id="password_user" name="password_user" >
-    </div>
-    <hr>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-      <a href="/reset-password" id="pass">¿Olvidó la contraseña?</a>
-    </div>
-    <span class="text-small">¿Aún no tienes una cuenta? <a href="/register"> Crear cuenta</a></span>
-  </form>
+  <div [hidden]="submitted">
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+      <h2 class="mb-2">Iniciar sesión en Mikvo</h2>
+      <p>Ingrese a su cuenta para continuar</p>
+      <br>
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" class="form-control" [(ngModel)]="user.email_user" placeholder="" required id="email"
+          name="email" #email="ngModel">
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+          Ingresa un email
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password_user">Contraseña</label>
+        <input type="password" class="form-control" [(ngModel)]="user.password_user" placeholder="" required
+          id="password_user" name="password_user">
+      </div>
+      <hr>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.form.valid">Ingresar</button>
+        <a href="/reset-password" id="pass">¿Olvidó la contraseña?</a>
+      </div>
+      <span class="text-small">¿Aún no tienes una cuenta? <a href="/register"> Crear cuenta</a></span>
+    </form>
+  </div>
 </div>

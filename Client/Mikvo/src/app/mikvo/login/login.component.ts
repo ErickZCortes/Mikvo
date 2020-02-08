@@ -19,6 +19,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+  
   login(){
     
     try {

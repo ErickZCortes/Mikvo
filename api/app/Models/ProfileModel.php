@@ -25,6 +25,44 @@
                 'profiles' => $result
             );
         }
+
+        public function getByIdProfile($idprofile){
+            $result = $this->db->select('profile',[
+                'id_profile',
+                'iduser_profile',
+                'addpool_profile',
+                'name_profile',
+                'cost_profile',
+                'formatc_profile',
+                'port_profile',
+                'idtime_profile',
+                'dbyte_profile',
+                'sbyte_profile',
+                'vdescarga_profile',
+                'vsubida_profile'
+            ],[
+                "id_profile" => $idprofile
+            ]
+        );
+
+        if(!is_null($this->db->error()[1])){
+            return array(
+                'error' => true,
+                'description' => $this->db->error()[2]
+            );
+        } else if (empty($result)){
+            return array(
+                'notFound' => true,
+                'description' => 'The result is empty'
+            );
+        }
+        return array(
+            'success' => true,
+            'description' => 'The profile were found',
+            'profiles' => $result
+        );
+        }
+
         public function insertProfiles($profile){
             $result = $this->db->pdo->prepare(
                 'INSERT INTO profiles(

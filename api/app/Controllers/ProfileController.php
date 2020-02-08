@@ -6,6 +6,12 @@
             return json_encode($message);
         }
 
+        function getProfilebyId($request, $response){
+            $idprofile = $request->getAttribute('id_profile');
+            $message = $this->ProfileModel->getByIdProfile($idprofile);
+            return json_encode($message);
+        }
+
         function insertProfiles($request, $response){
             $profile = $request->getParsedBody();
             $message = $this->ProfileModel->insertProfiles($profile);

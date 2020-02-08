@@ -11,14 +11,23 @@ export class UserDatasourceService {
 
   private bassUrl: string;
 
-  constructor(private httpClient: HttpClient) { 
-   this.bassUrl = `${PROTOCOL}://${location.hostname}/mikvo/api`; 
+  constructor(private httpClient: HttpClient) {
+    this.bassUrl = `${PROTOCOL}://${location.hostname}/mikvo/api`;
   };
 
-  getUsers(): any{
+  getUsers(): any {
     return this.httpClient.get(this.bassUrl + '/users');
   }
 
-  login(user: User){
-    return this.httpClient.post<User>(this.bassUrl + '/users/login',user)};
+  login(user: User) {
+    return this.httpClient.post<User>(this.bassUrl + '/users/login', user)
+  };
+
+  insertUser(user: User) {
+    return this.httpClient.post<User>(this.bassUrl + '/users', user);
+  };
+
+  updateUser(user: User) {
+    return this.httpClient.put<User>(this.bassUrl + '/users', user);
+  };
 }
