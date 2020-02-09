@@ -6,16 +6,14 @@
       <br>
       <div class="form-group">
         <label for="email">Correo electrónico</label>
-        <input type="email" class="form-control" [(ngModel)]="user.email_user" placeholder="" required id="email"
-          name="email" #email="ngModel">
+        <input type="email" class="form-control" [(ngModel)]="user.email_user" placeholder="" required id="email" name="email" #email="ngModel">
         <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
           Ingresa un email
         </div>
       </div>
       <div class="form-group">
         <label for="password_user">Contraseña</label>
-        <input type="password" class="form-control" [(ngModel)]="user.password_user" placeholder="" required
-          id="password_user" name="password_user">
+        <input type="password" class="form-control" [(ngModel)]="user.password_user" placeholder="" required id="password_user" name="password_user">
       </div>
       <hr>
       <div class="form-group">

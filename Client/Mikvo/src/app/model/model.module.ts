@@ -8,7 +8,7 @@ import { User } from './user/user';
 import { ProfileDatasourceService } from './profiles/profile.datasource.service';
 import { ProfileRepositoryService } from './profiles/profile.repository.service';
 import { Profile } from './profiles/profile';
-import { RouterboardDatasourceService } from './routerboards/routerboard.datasource.service';
+import { RouterboardDatasourceService } from './routerboards/routerboard-datasource.service';
 import { Routerboard } from './routerboards/routerboard';
 import { TimeDatasourceService } from './times/time-datasource.service';
 import { TimeRepositoryService } from './times/time-repository.service';
