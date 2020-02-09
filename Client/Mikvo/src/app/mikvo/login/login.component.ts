@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserRepositoryService } from 'src/app/model/user/user-repository.service';
 import { Observable } from 'rxjs';
 import { UserDatasourceService } from 'src/app/model/user/user-datasource.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
 
    //user: User;
    user :User= {} as User;
+
   constructor(private router: Router, private userRepoService: UserRepositoryService) { }
 
   ngOnInit() {

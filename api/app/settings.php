@@ -3,7 +3,7 @@
     $db = require $contexto_app . '/app/database/config.php';
     
     //key de encriptacion
-    $jwt = array('key' => 'Zu%8wKhc@!DG2#&X9', 'algorithms'=> array('HS256')); 
+    $jwt = array('key' => 'N&Vx(5uR?2$y9GhM235j#aIm@W2rH/>p', 'algorithms'=> 'HS256'); 
 
     //configuración de la app
     $settings = array(

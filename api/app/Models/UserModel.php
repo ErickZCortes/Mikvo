@@ -132,12 +132,25 @@
                     'description' => 'Password incorrect'
                 );
             }
-            $token = $this->JWTService->encode($email);
+            $iat = time(); // tiempo de la creación del token
+            $nbf = $iat + 10; //tiempo de inicio del token
+            $exp = $iat + (60*60); // tiempo de expiracion del token 1h
+            $token = array(
+                "iat" => $iat,
+                "nbf" => $nbf,
+                "exp" => $exp,
+                "data" => array(
+                    "email" => $email,
+                    "pass" => $pass
+                )
+            );
+            $token = $this->JWTService->encode($token);
             return array(
                 'success' => true,
                 'description' => 'Correct access, Welcome',
                 'token' => $token,
             );
+
         }
 
         public function logout(){
