@@ -16,6 +16,7 @@ import { DefaultModule } from './mikvo/dashboard/layouts/default/default.module'
 import { MikvoModule } from './mikvo/mikvo.module';
 import { Mikvoguard } from './mikvoguard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DefaultModule,
     MikvoModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [Mikvoguard],
   bootstrap: [AppComponent]
