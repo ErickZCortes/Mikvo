@@ -3,7 +3,7 @@
 <div class="card shadow mb-4">
   <div class="card-body">
     <h5 id="title">Add Routers</h5>
-    <form #routerform="ngForm" (ngSubmit)="insertRouter()">
+    <form #routerform="ngForm" (ngSubmit)="insertRouter(); routerform.reset()">
       <div class="row">
         <div class="col-sm-10 col-md-4 col-lg-4">
           <div class="form-group">
@@ -100,7 +100,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let router of roters" role="row" class="odd">
+                <tr  role="row" class="odd" *ngFor="let router of routers">
                   <td class="sorting_1">{{router.model_router}}</td>
                   <td>{{router.router_description}}</td>
                   <td>{{router.ip_router}}</td>
