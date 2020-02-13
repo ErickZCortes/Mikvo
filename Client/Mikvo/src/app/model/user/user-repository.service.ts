@@ -9,38 +9,56 @@ import { UserDatasourceService } from './user-datasource.service';
 export class UserRepositoryService {
 
   private user: User[] = [];
-  private userNumber: string[] =[];
-  
-  constructor( private dataSourceService: UserDatasourceService) {
-    dataSourceService.getUsers().subscribe((response) =>{
+  private userNumber: string[] = [];
+
+  constructor(private dataSourceService: UserDatasourceService) {
+    dataSourceService.getUsers().subscribe((response) => {
       this.user = response['users'];
       this.userNumber = response['users'].map(u => u.usererNumber).filter((c, index, array) => array.indexOf(c) === index).sort();
     });
-   }
+  }
 
-   getUser(): User[]{
-     return this.user;
-   } 
+  getUser(): User[] {
+    return this.user;
+  };
 
-   login(user:User){
+  login(user: User) {
     return this.dataSourceService.login(user)
-    .subscribe((response) => {
-      console.log(response);
-    });
-   }
+      .subscribe((response) => {
+        console.log(response);
+        localStorage.setItem('token', response.token);
+      });
+  };
 
-   insertUser(user:User){
-    return this.dataSourceService.insertUser(user)
-    .subscribe((response) => {
+  getToken() {
+    return localStorage.getItem('token');
+  };
+
+  deleteToken() {
+    localStorage.removeItem('token');
+  };
+
+  isLoggedIn() {
+    const usertoken = this.getToken();
+    if (usertoken != null) {
+      return true
+    }
+    return false;
+  };
+
+
+  registerUser(user: User) {
+    return this.dataSourceService.registerUser(user)
+      .subscribe((response) => {
         console.log(response);
       });
-   };
+  };
 
-   updateUser(user:User){
+  updateUser(user: User) {
     return this.dataSourceService.updateUser(user)
-    .subscribe((response) => {
+      .subscribe((response) => {
         console.log(response);
       });
-   };
+  };
 
 }

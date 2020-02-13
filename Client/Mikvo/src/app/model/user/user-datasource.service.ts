@@ -23,8 +23,8 @@ export class UserDatasourceService {
     return this.httpClient.post<User>(this.bassUrl + '/users/login', user)
   };
 
-  insertUser(user: User) {
-    return this.httpClient.post<User>(this.bassUrl + '/users', user);
+  registerUser(user: User) {
+    return this.httpClient.post<User>(this.bassUrl + '/users/register', user);
   };
 
   updateUser(user: User) {

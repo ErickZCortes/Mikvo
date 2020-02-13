@@ -7,7 +7,8 @@ export class User {
         public password_user: string,
         public token_user: string,
         public img_user: string,
-        public access_user: string
+        public access_user: string,
+        public token?: string
     ){
 
     }

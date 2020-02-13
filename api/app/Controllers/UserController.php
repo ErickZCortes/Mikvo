@@ -7,10 +7,10 @@
             return json_encode($message);
         }
 
-        function insertUsers($request, $response){
+        function registerUser($request, $response){
             $user = $request->getParsedBody();
             //var_dump($employee);die();
-            $message = $this->UserModel->insertUsers($user);
+            $message = $this->UserModel->registerUser($user);
             return json_encode($message);
         }
 

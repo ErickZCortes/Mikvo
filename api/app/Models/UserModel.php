@@ -25,7 +25,7 @@
                 'users' => $result
             );
         }
-        public function insertUsers($user){
+        public function registerUser($user){
             $result = $this->db->pdo->prepare(
                 'INSERT INTO users (
                     id_user,
@@ -110,28 +110,24 @@
         }
 
         public function login($login){
+            
             $email = $login['email_user'];
             $pass = md5($login['password_user']);
-            $sqlE = $this->db->pdo->prepare('SELECT * FROM users WHERE email_user = :email');
-            $sqlE->bindParam(':email', $email, \PDO::PARAM_STR);
-            $sqlE->execute();
-            $result = $sqlE->fetchAll(\PDO::FETCH_ASSOC);
-            if(empty($result)){
-                return array(
-                    'error' => true,
-                    'description' => 'Email incorrect'
-                );
-            }
-            $sqlP = $this->db->pdo->prepare('SELECT * FROM users WHERE password_user = :password');
-            $sqlP->bindParam(':password', $pass, \PDO::PARAM_STR);
-            $sqlP->execute();
-            $result = $sqlP->fetchAll(\PDO::FETCH_ASSOC);
+
+            $sql = $this->db->pdo->prepare('SELECT * FROM users WHERE email_user = :email and password_user = :pass');
+            $sql->bindParam(':email', $email, \PDO::PARAM_STR);
+            $sql->bindParam(':pass', $pass, \PDO::PARAM_STR);
+            $sql->execute();
+            $result = $sql->fetchAll(\PDO::FETCH_ASSOC);
             if(empty($result)){
                 return array(
                     'error' => true,
                     'description' => 'Password incorrect'
                 );
+            }else{
+                $iduser = $result[0]['id_user'];
             }
+            
             $iat = time(); // tiempo de la creación del token
             $nbf = $iat + 10; //tiempo de inicio del token
             $exp = $iat + (60*60); // tiempo de expiracion del token 1h
@@ -140,6 +136,7 @@
                 "nbf" => $nbf,
                 "exp" => $exp,
                 "data" => array(
+                   "iduser" => $iduser,
                     "email" => $email,
                     "pass" => $pass
                 )
@@ -149,12 +146,9 @@
                 'success' => true,
                 'description' => 'Correct access, Welcome',
                 'token' => $token,
-            );
+            ); $iduser; 
 
         }
 
-        public function logout(){
-            session_destroy();
-        }
     }
 ?>

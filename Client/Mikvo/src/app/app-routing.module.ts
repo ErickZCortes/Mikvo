@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'reset-password', component: ResetPasswordComponent},
 
-  { path:'', component: DefaultComponent,
+  { path:'', component: DefaultComponent,canActivate:[Mikvoguard],
     children:[
       { path:'dashboard', component: MainComponent },
       { path: 'user', component: UserprofileComponent },

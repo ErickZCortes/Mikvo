@@ -100,17 +100,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr  role="row" class="odd" *ngFor="let router of routers">
+                <tr *ngFor="let router of routerboardRepoService.routerboard" role="row" class="odd">
                   <td class="sorting_1">{{router.model_router}}</td>
                   <td>{{router.router_description}}</td>
                   <td>{{router.ip_router}}</td>
                   <td>{{router.user_router}}</td>
                   <td>{{router.password_router}}</td>
                   <td id="btntable">
-                    <button class="btn btn-info btn-sm">
-                      <i class="fa fa-repeat"></i>
-                    </button>
-                    <button class="btn btn-danger btn-sm">
+                    <button class="btn btn-danger btn-sm" (click)="deletRouter(router.id_router)">
                       <i class="fa fa-trash-o"></i>
                     </button>
                   </td>
