@@ -1,12 +1,12 @@
 <?php
-    namespace app\Controllers;
-
+    namespace app\Controllers;   
     class UserController extends Controllers {
+        
         function selectUsers($request, $response){
-            $message = $this->UserModel->selectUsers();
-            return json_encode($message);
+                $message = $this->UserModel->selectUsers();
+                return json_encode($message);
         }
-
+            
         function registerUser($request, $response){
             $user = $request->getParsedBody();
             //var_dump($employee);die();
@@ -20,11 +20,11 @@
             return json_encode($message);
         }
 
-        function getUserbyId($request, $response){
+        /*function getUserbyId($request, $response){
             $userNumber = $request->getAttribute('userNumber');
             $message = $this->UserModel->getByIdUser($userNumber);
             return json_encode($message);
-        }
+        }*/
 
         function login($request, $response){
             $login = $request->getParsedBody();

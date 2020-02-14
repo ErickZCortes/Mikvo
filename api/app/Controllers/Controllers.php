@@ -1,8 +1,10 @@
 <?php
+
     namespace app\Controllers;
     class Controllers {
         public function __construct($container){
             $this->container = $container;
+            
         }
 
         public function __get($property){

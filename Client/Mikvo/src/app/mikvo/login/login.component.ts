@@ -5,6 +5,7 @@ import { UserRepositoryService } from 'src/app/model/user/user-repository.servic
 import { Observable } from 'rxjs';
 import { UserDatasourceService } from 'src/app/model/user/user-datasource.service';
 import { ToastrService } from 'ngx-toastr';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -26,16 +27,11 @@ export class LoginComponent implements OnInit {
   onSubmit() { this.submitted = true; }
   
   login(){
-    
-    
     try {
       const result = this.userRepoService.login(this.user);
-      if (result) {
-        this.router.navigate(['/dashboard']);
-        //console.log(this.userRepoService.login(user));
-        //console.log(user);
-        //console.log(this.user);
-      }  
+      if(result){
+        //this.router.navigate(['/user']);
+      }
     }
     catch (e) {
       console.error(e);
