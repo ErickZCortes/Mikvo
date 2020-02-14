@@ -20,11 +20,11 @@
             return json_encode($message);
         }
 
-        /*function getUserbyId($request, $response){
+        function getUserbyId($request, $response){
             $userNumber = $request->getAttribute('userNumber');
             $message = $this->UserModel->getByIdUser($userNumber);
             return json_encode($message);
-        }*/
+        }
 
         function login($request, $response){
             $login = $request->getParsedBody();

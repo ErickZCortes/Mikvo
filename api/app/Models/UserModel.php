@@ -25,6 +25,40 @@
                 'users' => $result
             );
         }
+
+        public function getByIdUser($iduser){
+            $result = $this->db->select('users',[
+                'id_user',
+                'fullname_user',
+                'user_name',
+                'email_user',
+                'password_user',
+                'token_user',
+                'img_user',
+                'access_user'
+            ],[
+                "id_user" => $iduser
+            ]
+        );
+
+        if(!is_null($this->db->error()[1])){
+            return array(
+                'error' => true,
+                'description' => $this->db->error()[2]
+            );
+        } else if (empty($result)){
+            return array(
+                'notFound' => true,
+                'description' => 'The result is empty'
+            );
+        }
+        return array(
+            'success' => true,
+            'description' => 'The user were found',
+            'profiles' => $result
+        );
+        }
+
         public function registerUser($user){
             $result = $this->db->pdo->prepare(
                 'INSERT INTO users (
@@ -125,7 +159,7 @@
                     'description' => 'Password incorrect'
                 );
             }else{
-                $iduser = $result[0]['id_user'];
+                $uid = $result[0]['id_user'];
             }
             
             $iat = time(); // tiempo de la creación del token
@@ -136,7 +170,7 @@
                 "nbf" => $nbf,
                 "exp" => $exp,
                 "data" => array(
-                   "iduser" => $iduser,
+                   "uid" => $uid,
                     "email" => $email,
                     "pass" => $pass
                 )
@@ -146,7 +180,7 @@
                 'success' => true,
                 'description' => 'Correct access, Welcome',
                 'token' => $token,
-            ); $iduser; 
+            ); 
             
         }
 

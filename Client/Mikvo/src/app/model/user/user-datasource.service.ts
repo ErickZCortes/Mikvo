@@ -19,6 +19,10 @@ export class UserDatasourceService {
     return this.httpClient.get(this.bassUrl + '/users');
   }
 
+  getUserbyId(uid : number): any {
+    return this.httpClient.get(this.bassUrl + '/users/' + uid);
+  }
+
   login(user: User) {
     return this.httpClient.post<User>(this.bassUrl + '/users/login', user)
   };

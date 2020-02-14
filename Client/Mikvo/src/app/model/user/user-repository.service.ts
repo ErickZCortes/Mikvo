@@ -23,10 +23,14 @@ export class UserRepositoryService {
     return this.user;
   };
 
+  getUserbyId(uid : number): any {
+    return this.dataSourceService.getUserbyId(uid);
+  }
+  
   login(user: User) {
     return this.dataSourceService.login(user)
       .subscribe((response) => {
-        this.router.navigate(['/user']);
+        this.router.navigate(['dashboard/user']);
         console.log(response);
         localStorage.setItem('token', response.token);
       });
