@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, first } from 'rxjs/operators';
 import { User } from './user';
 import { UserDatasourceService } from './user-datasource.service';
 import { Router } from '@angular/router';
@@ -11,6 +11,7 @@ export class UserRepositoryService {
 
   private user: User[] = [];
   private userNumber: string[] = [];
+  private uid:number;
 
   constructor(private router : Router, private dataSourceService: UserDatasourceService) {
     dataSourceService.getUsers().subscribe((response) => {
@@ -27,13 +28,19 @@ export class UserRepositoryService {
     return this.dataSourceService.getUserbyId(uid);
   }
   
+  decodeToken(token:string){
+    return this.dataSourceService.decodeToken(token)
+    .subscribe((response)=>{
+      console.log(response);
+    });
+  }
   login(user: User) {
     return this.dataSourceService.login(user)
-      .subscribe((response) => {
-        this.router.navigate(['dashboard/user']);
-        console.log(response);
+    .subscribe((response)=>{
+        this.router.navigate(['dashboard/main']);
+        //console.log(response);
         localStorage.setItem('token', response.token);
-      });
+    });
   };
 
   getToken() {
@@ -44,12 +51,16 @@ export class UserRepositoryService {
     localStorage.removeItem('token');
   };
 
+
   isLoggedIn() {
     const usertoken = this.getToken();
-    if (usertoken != null) {
-      return true
+    if (usertoken == null) {
+      return false;
+    }else if (usertoken == "undefined"){
+      this.deleteToken();
+      return false;
     }
-    return false;
+    return true;
   };
 
 

@@ -13,8 +13,9 @@ import { UserRepositoryService } from 'src/app/model/user/user-repository.servic
 export class RouterboardComponent implements OnInit {
 
   routerboard :Routerboard= {} as Routerboard;
+  token:[];
 
-  constructor(private router: Router, private routerboardRepoService: RouterboardRepositoryService, private userrepose : UserRepositoryService) { 
+  constructor(private router: Router, private routerboardRepoService: RouterboardRepositoryService, private userRepositoryService : UserRepositoryService) { 
   }
 
   ngOnInit() {
@@ -30,7 +31,6 @@ export class RouterboardComponent implements OnInit {
 
   insertRouter(){
    this.routerboardRepoService.insertRouter(this.routerboard);
-   this.userrepose.getToken();
   }
   
   //deletRouter(routerid: number){

@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
 
    //user: User;
    user :User= {} as User;
+   private token : string;
 
   constructor(private router: Router, private userRepoService: UserRepositoryService) { }
 
@@ -27,14 +28,10 @@ export class LoginComponent implements OnInit {
   onSubmit() { this.submitted = true; }
   
   login(){
-    try {
-      const result = this.userRepoService.login(this.user);
-      if(result){
-        //this.router.navigate(['/user']);
-      }
-    }
-    catch (e) {
-      console.error(e);
-    }
+    this.userRepoService.login(this.user);
+      
+     
+     
+     //this.userRepoService.decodeToken(this.token);
   };  
 } 

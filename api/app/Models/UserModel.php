@@ -159,7 +159,7 @@
                     'description' => 'Password incorrect'
                 );
             }else{
-                $uid = $result[0]['id_user'];
+                $id_user = $result[0]['id_user'];
             }
             
             $iat = time(); // tiempo de la creación del token
@@ -170,7 +170,7 @@
                 "nbf" => $nbf,
                 "exp" => $exp,
                 "data" => array(
-                   "uid" => $uid,
+                   "uid" => $id_user,
                     "email" => $email,
                     "pass" => $pass
                 )
@@ -179,9 +179,15 @@
             return array(
                 'success' => true,
                 'description' => 'Correct access, Welcome',
-                'token' => $token,
+                'token' => $token
             ); 
             
+        }
+
+        public function decodeToken($token){
+            $token = $this->JWTService->decode($token);
+            var_dump($token);
+            return $token;
         }
 
     }

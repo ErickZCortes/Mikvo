@@ -5,5 +5,10 @@
             $message = $this->jwt->encode($caracter, $this->settings['jwt']['key']);
             return $message;
         }
+
+        public function decode($caracter){
+            $message = $this->jwt->decode($caracter, $this->settings['jwt']['key']);
+            return $message;
+        }
     }
 ?>

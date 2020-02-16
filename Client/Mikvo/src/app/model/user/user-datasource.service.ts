@@ -23,6 +23,10 @@ export class UserDatasourceService {
     return this.httpClient.get(this.bassUrl + '/users/' + uid);
   }
 
+  decodeToken(token:string){
+    return this.httpClient.post(this.bassUrl + '/users', token);
+  }
+
   login(user: User) {
     return this.httpClient.post<User>(this.bassUrl + '/users/login', user)
   };
