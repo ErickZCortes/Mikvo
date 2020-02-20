@@ -16,8 +16,7 @@ export class UserprofileComponent implements OnInit {
 
   ngOnInit() {
   }
-  /*get users() : User[] {
-    this.uid = this.userRepositoryService.decodeToken();
-    return this.userRepositoryService.getUserbyId(this.uid);
-  }*/
+  get users() : User[] {
+    return this.userRepositoryService.getUserbyId();
+  }
 }

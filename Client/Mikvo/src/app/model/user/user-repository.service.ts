@@ -11,29 +11,27 @@ export class UserRepositoryService {
 
   private user: User[] = [];
   private userNumber: number[] = [];
-  private uid:number;
   private token:string;
+  private infouser:User[]=[];
   constructor(private router : Router, private dataSourceService: UserDatasourceService) {
     dataSourceService.getUsers().subscribe((response) => {
       this.user = response['users'];
       this.userNumber = response['users'].map(u => u.userNumber).filter((c, index, array) => array.indexOf(c) === index).sort();
     });
-    //dataSourceService.decodeToken().subscribe((response)=>{
-
-    //})
   }
 
   getUser(): User[] {
     return this.user;
   };
 
-  getUserbyId(){
+  getUserbyId(): User[]{
     this.decodeToken().subscribe((response:number)=>{
-      return this.dataSourceService.getUserbyId(response).subscribe((res)=>{
-        console.log(res);
+       this.dataSourceService.getUserbyId(response).subscribe((response)=>{
+        //console.log(this.infouser = response['user']);
+         this.infouser = response['user'];       
       }); 
-    })
-    
+    });
+    return this.infouser;
   }
   
   login(user: User) {
@@ -47,9 +45,10 @@ export class UserRepositoryService {
 
   decodeToken(): any{
     if (!this.isLoggedIn == false){
-      let decodedget :number;
-       //this.token =;
-        return this.dataSourceService.decodeToken(this.getToken());
+        return this.dataSourceService.decodeToken(this.getToken())
+        .subscribe((response)=>{
+          console.log(response);
+        });
     }
   }
 

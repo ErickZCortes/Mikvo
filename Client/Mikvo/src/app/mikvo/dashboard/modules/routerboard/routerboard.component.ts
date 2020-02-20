@@ -4,6 +4,7 @@ import { RouterboardRepositoryService } from 'src/app/model/routerboards/routerb
 import { Router } from '@angular/router';
 import { RouterboardDatasourceService } from 'src/app/model/routerboards/routerboard-datasource.service';
 import { UserRepositoryService } from 'src/app/model/user/user-repository.service';
+import { User } from 'src/app/model/user/user';
 
 @Component({
   selector: 'app-routerboard',
@@ -30,9 +31,8 @@ export class RouterboardComponent implements OnInit {
 
   insertRouter(){
    this.routerboardRepoService.insertRouter(this.routerboard);
-   
-   
-    console.log(this.userRepositoryService.getUserbyId());
+   this.userRepositoryService.decodeToken();
+   this.userRepositoryService.getUserbyId();
   }
   
   //deletRouter(routerid: number){

@@ -55,7 +55,7 @@
         return array(
             'success' => true,
             'description' => 'The user were found',
-            'profiles' => $result
+            'user' => $result
         );
         }
 
