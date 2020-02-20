@@ -45,10 +45,7 @@ export class UserRepositoryService {
 
   decodeToken(): any{
     if (!this.isLoggedIn == false){
-        return this.dataSourceService.decodeToken(this.getToken())
-        .subscribe((response)=>{
-          console.log(response);
-        });
+        return this.dataSourceService.decodeToken(this.getToken());   
     }
   }
 

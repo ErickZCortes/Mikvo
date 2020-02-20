@@ -2,12 +2,12 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-4">
-            <div class="text-center card shadow mb-4 mx-auto" >
+            <div class="text-center card shadow mb-4 mx-auto" *ngFor="let user of users">
                 <div class="card-body">
                     <img class="rounded-circle"
                         src="https://cursania.com/imagenes/usuario/foto/foto-usuario-cursania.png" alt="" width="200"
                         height="200">
-                    <h4 class="mb-0">sldjasljasdlk</h4>
+                    <h4 class="mb-0">{{user.user_name}}</h4>
                     <span class="text-muted d-block mb-2">User Name</span>
                     <hr>
                     <span class="btn btn-primary btn-file">Cambiar Imagen<input type="file">
