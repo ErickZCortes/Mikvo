@@ -163,32 +163,41 @@
             }
             
             $iat = time(); // tiempo de la creación del token
-            $nbf = $iat + 10; //tiempo de inicio del token
+           // $nbf = $iat + 10; //tiempo de inicio del token
             $exp = $iat + (60*60); // tiempo de expiracion del token 1h
             $token = array(
                 "iat" => $iat,
-                "nbf" => $nbf,
+           //     "nbf" => $nbf,
                 "exp" => $exp,
-                "data" => array(
-                   "uid" => $id_user,
-                    "email" => $email,
-                    "pass" => $pass
-                )
+                   "id_user" => $id_user,
+                    "email_user" => $email,
+                    "password_user" => $pass
+                
             );
             $token = $this->JWTService->encode($token);
+            
             return array(
                 'success' => true,
                 'description' => 'Correct access, Welcome',
-                'token' => $token
+                'token' => $token          
             ); 
-            
         }
 
         public function decodeToken($token){
-            $token = $this->JWTService->decode($token);
-            var_dump($token);
-            return $token;
+             $array = (array)$this->JWTService->decode($token);   
+             $id_user = $array['id_user'];
+             return $id_user;
+             
+             
         }
 
-    }
+        /*public function getIdUser($array){
+        //foreach($array as $usuario =>$id_user){          
+        //return $id_user[]
+        //}
+        //return $array;
+    }*/
+}
+
+    
 ?>

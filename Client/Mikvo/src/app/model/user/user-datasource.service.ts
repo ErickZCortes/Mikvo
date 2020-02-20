@@ -24,12 +24,16 @@ export class UserDatasourceService {
   }
 
   decodeToken(token:string){
-    return this.httpClient.post(this.bassUrl + '/users', token);
+    return this.httpClient.get(this.bassUrl + '/users/decode/'+ token);
   }
 
   login(user: User) {
-    return this.httpClient.post<User>(this.bassUrl + '/users/login', user)
+    return this.httpClient.post<User>(this.bassUrl + '/users/login', user);
   };
+
+  /*getIdUser(array:[]) {
+    return this.httpClient.post(this.bassUrl + '/users/get', array);
+  };*/
 
   registerUser(user: User) {
     return this.httpClient.post<User>(this.bassUrl + '/users/register', user);

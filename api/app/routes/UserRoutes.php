@@ -4,5 +4,6 @@
     $app->put('/users', 'UserController:updateUsers');
     $app->get('/users/{userNumber}', 'UserController:getUserbyId');
     $app->post('/users/login', 'UserController:login');
-    $app->post('/users', 'UserController:decodeToken');
+    $app->get('/users/decode/{token}', 'UserController:decodeToken');
+   // $app->post('/users/get', 'UserController:getIdUser');
 ?>

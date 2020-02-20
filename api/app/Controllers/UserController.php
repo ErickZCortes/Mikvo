@@ -31,10 +31,20 @@
             $message = $this->UserModel->login($login);
             return json_encode($message);
         }
-        function decodeToken($request, $response){
+        /*function decodeToken($request, $response){
             $token = $request->getParsedBody();
             $message = $this->UserModel->decodeToken($token);
             return json_encode($message);
+        }*/
+        function decodeToken($request, $response){
+            $token = $request->getAttribute('token');
+            $message = $this->UserModel->decodeToken($token);
+            return json_encode($message);
         }
+        /*function getIdUser($request, $response){
+            $array = $request->getParsedBody();
+            $message = $this->UserModel->getIdUser($array);
+            return json_encode($message);
+        }*/
     }
 ?>

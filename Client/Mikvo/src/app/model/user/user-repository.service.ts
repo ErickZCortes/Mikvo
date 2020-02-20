@@ -10,41 +10,51 @@ import { Router } from '@angular/router';
 export class UserRepositoryService {
 
   private user: User[] = [];
-  private userNumber: string[] = [];
+  private userNumber: number[] = [];
   private uid:number;
-
+  private token:string;
   constructor(private router : Router, private dataSourceService: UserDatasourceService) {
     dataSourceService.getUsers().subscribe((response) => {
       this.user = response['users'];
-      this.userNumber = response['users'].map(u => u.usererNumber).filter((c, index, array) => array.indexOf(c) === index).sort();
+      this.userNumber = response['users'].map(u => u.userNumber).filter((c, index, array) => array.indexOf(c) === index).sort();
     });
+    //dataSourceService.decodeToken().subscribe((response)=>{
+
+    //})
   }
 
   getUser(): User[] {
     return this.user;
   };
 
-  getUserbyId(uid : number): any {
-    return this.dataSourceService.getUserbyId(uid);
+  getUserbyId(){
+    this.decodeToken().subscribe((response:number)=>{
+      return this.dataSourceService.getUserbyId(response).subscribe((res)=>{
+        console.log(res);
+      }); 
+    })
+    
   }
   
-  decodeToken(token:string){
-    return this.dataSourceService.decodeToken(token)
-    .subscribe((response)=>{
-      console.log(response);
-    });
-  }
   login(user: User) {
     return this.dataSourceService.login(user)
     .subscribe((response)=>{
+        console.log(response);
         this.router.navigate(['dashboard/main']);
-        //console.log(response);
         localStorage.setItem('token', response.token);
     });
   };
 
+  decodeToken(): any{
+    if (!this.isLoggedIn == false){
+      let decodedget :number;
+       //this.token =;
+        return this.dataSourceService.decodeToken(this.getToken());
+    }
+  }
+
   getToken() {
-    return localStorage.getItem('token');
+    return localStorage.getItem('token'); 
   };
 
   deleteToken() {

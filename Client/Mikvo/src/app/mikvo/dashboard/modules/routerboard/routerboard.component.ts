@@ -13,8 +13,7 @@ import { UserRepositoryService } from 'src/app/model/user/user-repository.servic
 export class RouterboardComponent implements OnInit {
 
   routerboard :Routerboard= {} as Routerboard;
-  token:[];
-
+  array :[];
   constructor(private router: Router, private routerboardRepoService: RouterboardRepositoryService, private userRepositoryService : UserRepositoryService) { 
   }
 
@@ -31,6 +30,9 @@ export class RouterboardComponent implements OnInit {
 
   insertRouter(){
    this.routerboardRepoService.insertRouter(this.routerboard);
+   
+   
+    console.log(this.userRepositoryService.getUserbyId());
   }
   
   //deletRouter(routerid: number){
