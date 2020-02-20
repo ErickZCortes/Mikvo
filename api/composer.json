@@ -2,7 +2,9 @@
     "require": {
         "slim/slim":"^3.0",
         "catfan/medoo":"^1.0",
-        "firebase/php-jwt":"^4.0"
+        "firebase/php-jwt":"^4.0",
+        "pear2/net_routeros":"*@beta",
+        "pear2/net_transmitter":"^1.0.0a4"
     },
     "autoload": {
         "psr-4": {

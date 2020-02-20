@@ -24,7 +24,7 @@ export class UserDatasourceService {
   }
 
   decodeToken(token:string){
-    return this.httpClient.get(this.bassUrl + '/users/decode/'+ token);
+    return this.httpClient.post<User>(this.bassUrl + '/users/decode', {token});
   }
 
   login(user: User) {

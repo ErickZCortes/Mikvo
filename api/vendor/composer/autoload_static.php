@@ -73,6 +73,23 @@ class ComposerStaticInitd54d57bb8ca3a7d322f9e9a26dc52f02
             array (
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
             ),
+            'PEAR2\\Net\\Transmitter\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear2/net_routeros/vendor/pear2/net_transmitter/src',
+                1 => __DIR__ . '/..' . '/pear2/net_transmitter/src',
+            ),
+            'PEAR2\\Net\\RouterOS\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear2/net_routeros/src',
+            ),
+            'PEAR2\\Console\\Color' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear2/net_routeros/vendor/pear2/console_color/src',
+            ),
+            'PEAR2\\Cache\\SHM' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear2/net_routeros/vendor/pear2/cache_shm/src',
+            ),
         ),
     );
 

@@ -32,7 +32,7 @@ export class RouterboardComponent implements OnInit {
   insertRouter(){
    this.routerboardRepoService.insertRouter(this.routerboard);
   // this.userRepositoryService.decodeToken();
-   this.userRepositoryService.getUserbyId();
+   this.userRepositoryService.decodeToken();
   }
   
   //deletRouter(routerid: number){

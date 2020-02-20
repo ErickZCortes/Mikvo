@@ -37,7 +37,7 @@
             return json_encode($message);
         }*/
         function decodeToken($request, $response){
-            $token = $request->getAttribute('token');
+            $token = $request->getParsedBody();
             $message = $this->UserModel->decodeToken($token);
             return json_encode($message);
         }

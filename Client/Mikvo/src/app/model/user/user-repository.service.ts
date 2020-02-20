@@ -24,7 +24,7 @@ export class UserRepositoryService {
     return this.user;
   };
 
-  getUserbyId(): User[]{
+  /*getUserbyId(): User[]{
     this.decodeToken().subscribe((response:number)=>{
        this.dataSourceService.getUserbyId(response).subscribe((response)=>{
         //console.log(this.infouser = response['user']);
@@ -32,7 +32,7 @@ export class UserRepositoryService {
       }); 
     });
     return this.infouser;
-  }
+  }*/
   
   login(user: User) {
     return this.dataSourceService.login(user)
@@ -45,7 +45,10 @@ export class UserRepositoryService {
 
   decodeToken(): any{
     if (!this.isLoggedIn == false){
-        return this.dataSourceService.decodeToken(this.getToken());   
+        return this.dataSourceService.decodeToken(this.getToken())
+        .subscribe((response)=>{
+          console.log(response);
+        });   
     }
   }
 

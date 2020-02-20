@@ -185,8 +185,10 @@
 
         public function decodeToken($token){
              $array = (array)$this->JWTService->decode($token);   
-             $id_user = $array['id_user'];
-             return $id_user;
+             
+             return array(
+                 'id_user'=> $array['id_user']
+             );
              
              
         }
